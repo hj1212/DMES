@@ -15,6 +15,18 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:spring/applicationContext*.xml</param-value>
     </context-param>
+    <!--配置JVM环境变量来解决log4j文件输出位置不正确问题-->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>webApp.root</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
 
     <!-- Spring监听器 -->
     <listener>
