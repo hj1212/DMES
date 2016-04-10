@@ -1,8 +1,11 @@
 package cn.edu.ncut.model;
 
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.Table;
 
 @Table(name = "tb_user")
+@Document
 public class User {
     private Integer id;
 

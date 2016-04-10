@@ -1,5 +1,6 @@
 package cn.edu.ncut.controller;
 
+import cn.edu.ncut.dao.UserDao;
 import cn.edu.ncut.model.User;
 import cn.edu.ncut.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,8 @@ import java.util.List;
 public class UserController {
     @Resource
     private UserService userService;
-
+    @Resource
+    private UserDao userDao;
 
     @RequestMapping("/showAllUsers")
     public  String showAllUsers(Model model)
