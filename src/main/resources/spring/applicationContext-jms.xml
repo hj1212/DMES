@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory" destroy-method="stop">
+        <property name="connectionFactory">
+            <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <!--broker服务的地址-->
+                <property name="brokerURL" value="tcp://localhost:61616"/>
+                <!--如果需要配置broker的用户名密码,需要修改conf/activemq.xml-->
+                <!--默认值为1000,如果不需要这么大,可以调小-->
+                <property name="maxThreadPoolSize" value="100"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="dest" class="org.apache.activemq.command.ActiveMQQueue">
+        <!--队列名称-->
+        <property name="physicalName" value="myQueue"/>
+    </bean>
+
+    <bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="jmsFactory"/>
+        <!--默认的队列-->
+        <property name="defaultDestination" ref="dest"/>
+        <!--接收超时时间10秒-->
+        <property name="receiveTimeout" value="10000"/>
+    </bean>
+
+</beans>
