@@ -20,6 +20,7 @@
 <br>
 
 <a href="/userController/showAllUsers" target="_blank">查询用户信息并跳转到一个JSP页面</a>
+<a href="/userController/showAllMongoUser" target="_blank">查询Mongo用户</a>
 
 <form action="/userController/addUser">
     姓名:<input name="name" type="text"/>
