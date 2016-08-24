@@ -49,12 +49,12 @@ public class TestMongoUser {
     public void testAdd() {
 
         //添加一百个user
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 1; i++) {
             User user = new User();
             user.setId(i);
             user.setAge(i);
             Random random = new Random();
-            user.setName("经过测试，通过以上配置，在eclipse自身的Run（“右箭头”）和Debug（“小虫子”）按钮下都会找到以你先前配置中“Name”值为名的条目（条目最前端也会有“m2”标识），单击之后即可启动基于Tomcat之上的相应项目的运行操作或调试操作。至于是运行项目还是调试项目，只取决于你单击的条目是在“右箭头”按钮下还是在“小虫子”按钮下。从这方面来看，他们还是很智能化的。" + random.nextInt(10000));
+            user.setName("2016年08月24日测试" + random.nextInt(10000));
             userDao.insert(user, collectionName);
         }
         Map<String, Object> params = new HashMap<String, Object>();
