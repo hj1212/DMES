@@ -35,6 +35,12 @@ public class RedisCacheConfig extends CachingConfigurerSupport
 
     Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
+
+    public RedisCacheConfig()
+    {
+        System.out.println("Java配置类初始化");
+    }
+
     @Bean
     public JedisPoolConfig jedisPoolConfig()
     {
