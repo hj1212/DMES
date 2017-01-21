@@ -40,9 +40,10 @@
         <persistence-api.version>1.0.2</persistence-api.version>
 
 
-        <junit.version>4.11</junit.version>
+        <junit.version>4.12</junit.version>
         <mysql-connector.version>5.1.21</mysql-connector.version>
         <druid.version>1.0.4</druid.version>
+        <jedis.version>2.9.0</jedis.version>
 
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -64,6 +65,8 @@
         <fastjson.version>1.1.43</fastjson.version>
 
         <spring-mongodb.version>1.9.1.RELEASE</spring-mongodb.version>
+        <spring-data-redis.version>1.6.2.RELEASE</spring-data-redis.version>
+
         <spring-boot.version>1.3.3.RELEASE</spring-boot.version>
         <mongodb.version>3.2.0</mongodb.version>
 
@@ -131,6 +134,19 @@
             <version>3.2.2</version>
         </dependency>
 
+        <!--Spring Data Redis-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>${spring-data-redis.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>${jedis.version}</version>
+        </dependency>
+
+        <!--Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
