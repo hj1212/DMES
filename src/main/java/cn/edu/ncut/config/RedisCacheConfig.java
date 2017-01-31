@@ -41,6 +41,7 @@ public class RedisCacheConfig extends CachingConfigurerSupport
         System.out.println("Java配置类初始化");
     }
 
+    // ******************* 注入方式1 **********************
     @Bean
     public JedisPoolConfig jedisPoolConfig()
     {
@@ -64,7 +65,7 @@ public class RedisCacheConfig extends CachingConfigurerSupport
         return jedis;
     }
 
-
+    // ******************* 注入方式2 **********************
     @Bean
     public JedisConnectionFactory redisConnectionFactory()
     {
@@ -84,7 +85,7 @@ public class RedisCacheConfig extends CachingConfigurerSupport
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
-
+    // ******************* Redis缓存 **********************
     @Bean
     public CacheManager cacheManager(RedisTemplate redisTemplate)
     {

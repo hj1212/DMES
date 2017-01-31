@@ -29,6 +29,8 @@
         <property name="maxWait" value="60000"></property>
     </bean>
     -->
+    <!-- 持久层异常转换为Sping类型异常-->
+    <bean id="persistenceExceptionTranslationPostProcessor" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"></bean>
     <!--使用spring管理MongoDB-->
     <mongo:db-factory id="mongoDbFactory"
                       host="${mongo_host}"
