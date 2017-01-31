@@ -5,6 +5,8 @@
     - Maven 3.1.1
     - Tomcat 8
     - MongoDB 3.2
+    - Redis
+    - ActiveMQ
     - IDE：IntelliJ IDEA 15.0.4
     - SSM 版本：
         - spring version：**4.2.5.RELEASE**
